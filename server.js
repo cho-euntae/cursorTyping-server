@@ -54,7 +54,7 @@ io.on('connection', (socket) => {
 
 server.listen(PORT, () => {
   // console.log(`Socket.IO 서버 실행 중: ${SOCKET_URL}:${PORT}`);
-  console.log(`Socket.IO 서버 실행 중: ${process.env.SOCKET_SERVER_URL}:${process.env.BACKEND_PORT}`);
+  console.log(`Socket.IO 서버 실행 중: ${process.env.SOCKET_SERVER_URL}:${process.env.PORT}`);
 });
 
 app.get('/', (req, res) => {
