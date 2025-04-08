@@ -17,6 +17,9 @@ const io = new Server(server, {
   },
 });
 
+const PORT = process.env.PORT || 4000;
+const SOCKET_URL = process.env.SOCKET_SERVER_URL || 'http://localhost';
+
 // 소켓 연결
 io.on('connection', (socket) => {
   console.log('클라이언트 연결됨:', socket.id);
@@ -49,8 +52,9 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(process.env.PORT, () => {
-  console.log(`Socket.IO 서버 실행 중: ${process.env.SOCKET_SERVER_URL}:${process.env.PORT}`);
+server.listen(PORT, () => {
+  // console.log(`Socket.IO 서버 실행 중: ${SOCKET_URL}:${PORT}`);
+  console.log(`Socket.IO 서버 실행 중: ${process.env.SOCKET_SERVER_URL}:${process.env.BACKEND_PORT}`);
 });
 
 app.get('/', (req, res) => {
